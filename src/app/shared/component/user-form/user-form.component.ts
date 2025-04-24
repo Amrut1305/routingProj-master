@@ -15,7 +15,6 @@ export class UserFormComponent implements OnInit {
   userId !: string
   userObj !: Iuser
   @ViewChild('userForm') userForm !: NgForm
-  mode : string='create'
 
   constructor(
     private _routs : ActivatedRoute,
@@ -27,14 +26,12 @@ export class UserFormComponent implements OnInit {
     this.userId = this._routs.snapshot.params['id']
     if(this.userId){
       this.isInEditMode=true
-      this.mode = 'edit'
       this.userObj=this._userService.getUser(this.userId)!
       setTimeout(()=>{
         this.userForm.form.patchValue(this.userObj)
       },0)
     }else{
       this.isInEditMode=false
-      this.mode = 'create'
     }
 
   }
