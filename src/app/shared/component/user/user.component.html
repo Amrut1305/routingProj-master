@@ -1,0 +1,21 @@
+
+<mat-card class="mt-5">
+    <mat-card-header>
+        <mat-card-title>
+        {{userObj.username}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        {{userObj.userRole}}
+    </mat-card-content>
+    <mat-card-actions>
+        <button 
+        routerLink="edituser"
+        mat-raised-button color="primary">Edit
+        </button>
+        
+        <button 
+        (click)="removeUser()"
+        mat-raised-button color="warn">Remove</button>
+    </mat-card-actions>
+</mat-card>

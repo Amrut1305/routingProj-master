@@ -1,0 +1,30 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <form #userForm="ngForm" (ngSubmit)="onUserSubmit()">
+                        <div class="form-group">
+                            <label for="username">User Name</label>
+                            <input 
+                            name="username" #username="ngModel" ngModel 
+                            type="text" id="username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="userRole">Select User Role</label>
+                            <select name="userRole" #userRole="ngModel" ngModel id="userRole" class="form-control">
+                                <option value="admin">Admin</option>
+                                <option value="super-admin">Super Admin</option>
+                                <option value="candidate">Candidate</option>
+                            </select>
+                        </div>
+                        <div class="btns d-flex justify-content-between">
+                            <button type="submit" mat-raised-button color="primary">{{isInEditMode?'Update User':'Add User'}}</button>
+                            <button type="button" mat-raised-button color="accent">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
